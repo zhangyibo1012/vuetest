@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <script src="../js/vue.js"></script>
+  <title>03-vue案例-计数器</title>
+</head>
+<body>
+
+<div id='app'>
+  <h2>当前计数:{{count}}</h2>
+
+  <!-- <button v-on:click = "count++">+</button>
+   <button v-on:click = "count&#45;&#45;">-</button>-->
+
+  <button @click="add()">+</button>
+  <button v-on:click="sub()">-</button>
+
+
+</div>
+
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      count: 0
+    },
+    methods: {
+      add: function () {
+        console.log("add")
+        this.count++
+      },
+      sub: function () {
+        console.log("sub")
+        this.count--
+      }
+    },
+    created: function () {
+      console.log('created')
+    },
+    mounted: function () {
+      console.log('mounted')
+    }
+  })
+</script>
+
+</body>
+</html>
